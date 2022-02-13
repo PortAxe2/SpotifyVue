@@ -17,7 +17,7 @@
         song from your device and the mini should be active.
       </p>
       <br>
-      <green-button buttonText="Continue"/>
+      <green-button buttonText="Continue" @click="buttonRedirect"/>
     </div>
 
   </div>
@@ -39,9 +39,22 @@ export default {
     GreenButton,
   },
 
-
   methods: {
+    buttonRedirect: function() {
+      var client_id     = prompt("Pleaser Enter User Client ID");
+      var client_secret = prompt("Pleaser Enter User Client Secret");
+      var searchParams = {
+        client_id: client_id,
+        response_type: 'code',
+        redirect_uri: 'http://localhost:3000/callback',
+        state: Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2), 
+        scope: 'user-read-private user-read-email app-remote-control streaming playlist-read-collaborative user-read-currently-playing user-library-read',
+      }
 
+      var params = new URLSearchParams(searchParams);
+      window.location.href = `https://accounts.spotify.com/authorize?${params.toString()}`;
+
+    }
   },
   data() {
     return {
