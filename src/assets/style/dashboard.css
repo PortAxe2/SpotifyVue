@@ -1,0 +1,132 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 12pt;
+}
+
+.wrapper {
+  height: 100%;
+  background-color: #181414;
+}
+
+.trackList {
+  width: 100%;
+}
+
+.searchInput {
+  background: none;
+  border: none;
+  width: 90%;
+  padding: 4px;
+}
+
+.searchInput:focus {
+  outline: none;
+  caret-color: white;
+  color: white;
+}
+
+.searchDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+}
+
+.queuePopUp {
+  position: fixed;
+  margin: 5% auto;
+  bottom: 16px;
+  right: 0;
+  left: 0;
+  background-color: #1DB954;
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 150px;
+  height: 30px;
+  padding: 8px;
+  color: white;
+  font-size: 12pt;
+  font-weight: 500;
+  opacity: 0;
+}
+
+.queuePopUp-show {
+  -webkit-transition: .5s ease-in;
+  transition: .5s ease-in;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  opacity: 1;
+}
+
+.queuedSongs {
+  background-color: #181414;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 8px;
+}
+
+.queuedSongs h2 {
+  color: white;
+  font-size: 14pt;
+  font-weight: 600;
+}
+
+.queuedSongs hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+  width: 100%;
+}
+
+.queuedSongs ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.queuedSongs .loadMore {
+  color: #006eff;
+  padding: 8px;
+}
+
+.queuedSongs .loadMore:hover {
+  cursor: pointer;
+}
+
+.playlists {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+/*# sourceMappingURL=dashboard.css.map */

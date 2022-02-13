@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.wrapper {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+}
+
+.albumDiv {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  aspect-ratio: 1;
+  background-size: contain;
+  overflow: hidden;
+}
+
+.albumDiv:hover .albumMetaData {
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-filter: drop-shadow(0px 5px 5px #000000);
+          filter: drop-shadow(0px 5px 5px #000000);
+}
+
+.albumDiv:hover .playbackControl {
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
+  -webkit-filter: drop-shadow(0px -5px 5px #000000);
+          filter: drop-shadow(0px -5px 5px #000000);
+}
+
+.trackInfoControl, .playbackControl {
+  font-size: 12pt;
+  font-weight: 600;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 180px;
+  background-color: #201c1c;
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  -webkit-transition: 0.4s ease-in;
+  transition: 0.4s ease-in;
+}
+
+.playbackControl {
+  color: #e2e2e2;
+  font-weight: 400;
+  font-size: 10pt;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-top: 4px;
+  -webkit-filter: drop-shadow(0px -5px 5px #00000000);
+          filter: drop-shadow(0px -5px 5px #00000000);
+}
+
+.playbackControl .timeTrack {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 85%;
+}
+
+.playbackControl .trackTime {
+  width: 75%;
+  margin-left: 8px;
+  margin-right: 8px;
+  background: red;
+  height: 5px;
+  opacity: 0.7;
+  border-radius: 4px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.trackMeta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.nameArtist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.trackName {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow-y: scroll;
+  margin-right: 8px;
+}
+
+.nameExplicit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 25px;
+}
+
+.trackName::-webkit-scrollbar {
+  display: none;
+}
+
+.buttonControl {
+  width: 30px;
+  height: 30px;
+  font-size: 24pt;
+  padding: 4px;
+  color: white;
+}
+
+.buttonControl:hover {
+  color: #292929;
+  cursor: pointer;
+}
+
+.nameArtist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.explicit {
+  font-size: 14pt;
+}
+/*# sourceMappingURL=player.css.map */

@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10pt;
+}
+
+.trackData {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 90%;
+}
+
+.addToQueue {
+  color: white;
+}
+
+.addToQueue span {
+  font-size: 12pt;
+  opacity: 0;
+}
+
+.addToQueue:hover {
+  color: #1DB954;
+}
+
+.smallTrack {
+  padding: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 8px;
+}
+
+.smallTrack:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: default;
+}
+
+.smallTrack:hover .addToQueue span {
+  opacity: 0.6;
+}
+
+.smallTrack img {
+  border-radius: 8px;
+}
+
+.albumArt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.albumArt span {
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  color: rgba(255, 255, 255, 0);
+  position: absolute;
+  font-size: 24pt;
+}
+
+.albumArt:hover span {
+  -webkit-transition: 0.1s ease-in;
+  transition: 0.1s ease-in;
+  color: white;
+}
+
+.smallTrackData {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 90%;
+  margin-left: 12px;
+}
+
+.smallTrackData .artistAndAlbum {
+  font-weight: 500;
+  color: #c4c4c4;
+}
+
+.smallTrackData .title {
+  font-weight: 600;
+  color: white;
+}
+/*# sourceMappingURL=smalltrack.css.map */

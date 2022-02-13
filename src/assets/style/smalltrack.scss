@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    font-family: 'Roboto', sans-serif;
+    font-size: 10pt;
+}
+
+.trackData{
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+}
+
+.addToQueue{
+    color: white;
+    span{
+        font-size: 12pt;
+        opacity: 0;
+    }
+    &:hover{
+        color: #1DB954;
+    }
+}
+
+.smallTrack{
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px;
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.2);
+        cursor: default;
+        .addToQueue{
+            span{
+                opacity: 0.6;
+            }
+        }
+    }
+    img{
+        border-radius: 8px;
+    }
+}
+
+.albumArt{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span{
+        transition: 0.1s ease-in;
+        color: rgba(255, 255, 255, 0);
+        position: absolute;
+        font-size: 24pt;
+    }
+    &:hover{
+        span{
+            transition: 0.1s ease-in;
+            color: rgba(255, 255, 255, 1);
+        }
+    }
+}
+
+.smallTrackData{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 90%;
+
+    .artistAndAlbum{
+        font-weight: 500;
+        color: rgb(196, 196, 196);
+    }
+
+    .title{
+        font-weight: 600;
+        color: white;
+    }
+
+    margin-left: 12px;
+}
