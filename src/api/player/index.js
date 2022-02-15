@@ -28,4 +28,15 @@ export default {
                 this.skipTrack();
             })
     },
+
+    getCurrentTrack() {
+        request
+            .get("/v1/me/player/currently-playing")
+            .then(response => {
+                return response.data;
+            })
+            .catch(() => {
+                return null;
+            })
+    },
 }

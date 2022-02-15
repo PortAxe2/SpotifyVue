@@ -46,7 +46,7 @@ export default {
         var data = new URLSearchParams ({
             grant_type: 'authorization_code',
             code: this.code,
-            redirect_uri: 'https://mini-player-for-spotify.web.app/callback',
+            redirect_uri: 'http://localhost:3000/callback',
             show_dialog: true
         });
 
@@ -64,8 +64,8 @@ export default {
                 console.log(response)
                 localStorage.setItem('spotifyToken', response.data.access_token);
                 localStorage.setItem('refreshSpotifyToken', response.data.refresh_token);
-                // window.location.href = "https://mini-player-for-spotify.web.app/dashboard";
-                window.open("https://mini-player-for-spotify.web.app/dashboard", 'popup', 'width=320,height=700');
+                // window.location.href = "http://localhost:3000/dashboard";
+                window.open("http://localhost:3000/dashboard", 'popup', 'width=320,height=700');
             })
             .catch(() => {
                 this.signedIn = false;

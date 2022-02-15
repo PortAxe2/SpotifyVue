@@ -81,7 +81,7 @@ export default {
     methods: {
 
         filterList: function() {
-            console.log(this.searchQuery);
+            //console.log(this.searchQuery);
         },
 
         getPlaylistFirstTrack: function(playlistId) {
@@ -114,7 +114,7 @@ export default {
         },
 
         generateQueue: function(url) {
-            console.log(this.nextUrlContext);
+            //console.log(this.nextUrlContext);
             axios
                 .get(url)
                 .then(response => {
@@ -166,7 +166,7 @@ export default {
                             return;
                         }
                     }catch(err){
-                        console.log(err);
+                        //console.log(err);
                     }
 
                     //We need to clear the current queue since the context has changed
@@ -179,7 +179,7 @@ export default {
                                 this.playlistURL = responseInner.data.href;
                                 this.playlistName = responseInner.data.name;
                                 this.nextUrlContext =  this.playlistURL;
-                                console.log(responseInner);
+                                //console.log(responseInner);
                                 this.generateQueue(this.nextUrlContext);
                             })
                     } else {
@@ -233,7 +233,7 @@ export default {
         axios.defaults.headers.common['Authorization'] =  `Bearer ${this.accessToken}`;
         axios.defaults.headers.common['Content-Type'] = 'application/json';
         this.getCurrentTrack();
-        this.getPlaylists();
+        //this.getPlaylists();
         this.refreshTrack();
     },
     

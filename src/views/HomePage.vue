@@ -59,7 +59,7 @@ export default {
       var searchParams = {
         client_id: this.client_id,
         response_type: 'code',
-        redirect_uri: 'https://mini-player-for-spotify.web.app/callback',
+        redirect_uri: 'http://localhost:3000/callback',
         state: Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2), 
         scope: 'user-read-private user-read-email app-remote-control streaming playlist-read-collaborative user-read-currently-playing user-library-read',
       }
