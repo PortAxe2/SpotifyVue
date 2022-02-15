@@ -1,4 +1,4 @@
-#Mini Player For Spotify
+# Mini Player For Spotify
 
 This project was built using Vue.js with the aim of being a Mini Player for Spotify. At the time of writing, capabilities include:
 
