@@ -6,7 +6,7 @@ This project was built using Vue.js with the aim of being a Mini Player for Spot
 - Playback Control (previous, pause/play, next, time seek)
 - Queuing songs
 
-A version of this app is hosted on https://mini-player-for-spotify.web.app/
+A version of this app is hosted on https://mini-player-for-spotify.web.app/.
 To utilize it, and since this project is still in development, the user must use his own Spotify Developer Client ID and Client Secret. Both of these are only stored locally and send to the Spotify API to generate the token needed to get/send data and commands.
 
 ## SpotifyVue
