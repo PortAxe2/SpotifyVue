@@ -30,8 +30,8 @@ export default {
     },
 
     getCurrentTrack() {
-        request
-            .get("/v1/me/player/currently-playing")
+        return request
+            .get("me/player/currently-playing")
             .then(response => {
                 return response.data;
             })

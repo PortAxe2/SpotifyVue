@@ -23,20 +23,22 @@ const request = axios.create({
 });
 
 
-request.interceptors.request.use(function (config) {
-    alert("request good");
-    return config;
-}, function (error) {
-    alert("request bad");
-    return Promise.reject(error);
-});
+// request.interceptors.request.use(function (config) {
+//     return config;
+// }, function (error) {
+//     return Promise.reject(error);
+// });
 
 
 request.interceptors.response.use(function (response) {
-    alert("response good");
+    
     return response;
 }, function (error) {
-    alert("response bad");
+    
+    if(error.response.status == 401) {
+        getNewToken();
+        return request.request(error.config);
+    }
     return Promise.reject(error);
 });
 

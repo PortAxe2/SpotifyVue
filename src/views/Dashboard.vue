@@ -139,56 +139,56 @@ export default {
             }
         },
 
-        getCurrentTrack: function() {
-            axios
-                .get("/v1/me/player/currently-playing")
-                .then(response => {
-                    //console.log(response);
-                    
-                    this.currentTrackTime = response.data.progress_ms;
-                    this.currentTrackLength = response.data.item.duration_ms;
+        getCurrentTrack: async function() {
 
-                    this.currentSongName = response.data.item.name;
-                    this.currentSongArtist = response.data.item.artists[0].name;
-                    this.currentAlbumName = response.data.item.album.name;
-                    this.currentCoverArt = response.data.item.album.images[0].url;
-                    this.currentSongId = response.data.item.id;
-                    
-                    this.explicit = response.data.item.explicit;
-                    this.playing = response.data.is_playing;
+            var ResData = await api.player.getCurrentTrack();
 
-                    this.isPlaylist = (response.data.context ? true : false);
+            //console.log(ResData);
+            
+            if(!ResData) { return; }
 
-                    if(this.playlistName == "Your Library" && response.data.context == null) { return; }
+            this.currentTrackTime = ResData.progress_ms;
+            this.currentTrackLength = ResData.item.duration_ms;
 
-                    try{
-                        if(this.playlistURL == response.data.context.href) {
-                            return;
-                        }
-                    }catch(err){
-                        //console.log(err);
-                    }
+            this.currentSongName = ResData.item.name;
+            this.currentSongArtist = ResData.item.artists[0].name;
+            this.currentAlbumName = ResData.item.album.name;
+            this.currentCoverArt = ResData.item.album.images[0].url;
+            this.currentSongId = ResData.item.id;
+            
+            this.explicit = ResData.item.explicit;
+            this.playing = ResData.is_playing;
 
-                    //We need to clear the current queue since the context has changed
-                    this.queueTracks = [];
+            this.isPlaylist = (ResData.context ? true : false);
 
-                    if(this.isPlaylist) {
-                        axios
-                            .get(response.data.context.href)
-                            .then(responseInner => {
-                                this.playlistURL = responseInner.data.href;
-                                this.playlistName = responseInner.data.name;
-                                this.nextUrlContext =  this.playlistURL;
-                                //console.log(responseInner);
-                                this.generateQueue(this.nextUrlContext);
-                            })
-                    } else {
-                        this.playlistName = 'Your Library';
-                        this.nextUrlContext = "/v1/me/tracks";
+            if(this.playlistName == "Your Library" && ResData.context == null) { return; }
+
+            try{
+                if(this.playlistURL == ResData.context.href) {
+                    return;
+                }
+            }catch(err){
+                //console.log(err);
+            }
+
+            //We need to clear the current queue since the context has changed
+            this.queueTracks = [];
+
+            if(this.isPlaylist) {
+                axios
+                    .get(ResData.context.href)
+                    .then(responseInner => {
+                        this.playlistURL = responseInner.data.href;
+                        this.playlistName = responseInner.data.name;
+                        this.nextUrlContext =  this.playlistURL;
+                        //console.log(responseInner);
                         this.generateQueue(this.nextUrlContext);
-                    }
-
-                })
+                    })
+            } else {
+                this.playlistName = 'Your Library';
+                this.nextUrlContext = "/v1/me/tracks";
+                this.generateQueue(this.nextUrlContext);
+            }
         },
 
         refreshTrack: function() {
