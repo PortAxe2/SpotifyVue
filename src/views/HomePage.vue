@@ -9,14 +9,26 @@
       <h3>Project Description</h3>
       <hr>
       <br>
-      <p>The desktop app for Spotify takes up plenty of screen space, even when it's reduced to its smallest width.
-        The web version of the Spotify player includes a mini player, but it active device has to be the web player instance.
-        This is where Mini Player comes in, it will allow you to control playback and queue songs on whatever device you want.
-        By pressing "Continue", you will be redirected to the spotify authentication page, where you will be able to view 
-        the needed permissions of the app. Should you choose to agree with those terms, a new popup window will open. Play any 
-        song from your device and the mini should be active.
+      <p>This Mini Player for Spotify allows the user to listen to control playback and queue tracks
+        with minimal screen space.
       </p>
       <br>
+
+      <form @submit.prevent>
+        <div class="clientForm">
+          <div class="inputDiv">  
+            <label for="clientId">Client ID</label>
+            <input type="text" name="clientID" v-model="client_id" placeholder="Client ID...">
+          </div>
+
+          <div class="inputDiv">
+            <label for="clientSecret">Client Secret</label>
+            <input type="text" name="clientSecret"  v-model="client_secret" placeholder="Client secret...">
+          </div>
+        </div>
+      </form>
+
+
       <green-button buttonText="Continue" @click="buttonRedirect"/>
     </div>
 
@@ -41,10 +53,11 @@ export default {
 
   methods: {
     buttonRedirect: function() {
-      var client_id     = prompt("Pleaser Enter User Client ID");
-      var client_secret = prompt("Pleaser Enter User Client Secret");
+      localStorage.setItem('client_id_spotify', this.client_id);
+      localStorage.setItem('client_secret_spotify', this.client_secret);
+
       var searchParams = {
-        client_id: client_id,
+        client_id: this.client_id,
         response_type: 'code',
         redirect_uri: 'http://localhost:3000/callback',
         state: Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2), 
@@ -58,7 +71,8 @@ export default {
   },
   data() {
     return {
-
+      client_id: '',
+      client_secret: '',
     }
   },
   

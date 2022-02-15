@@ -9,23 +9,6 @@
 
         <div class="playbackControl">
 
-
-            <div class="trackMeta">
-                <img src="./images/Spotify_Icon_RGB_White.png" style="height:30px; width:30px" alt="">
-                <div class="nameArtist">
-                    <div class="nameExplicit">
-                        <p class="trackName">{{ currentSongName }}</p>
-                        <span class="material-icons explicit" v-if="explicit">explicit</span>
-                    </div>
-                    <p>by {{ currentSongArtist }}</p>
-                </div>
-                
-                <div>
-                    <p>{{ currentAlbumName }}</p>
-                </div>
-
-            </div>
-
             <div class="timeTrack">
                 <span>{{ this.getCurrentTrackTime }}</span>
                 <input @change="setTrackTime" type="range" ref="trackProgressBar" class="trackTime" name="trackProgress" min="0" v-bind:max="currentTrackLength" v-bind:value="currentTrackTime" step="1000">
@@ -37,6 +20,22 @@
                 <span class="buttonControl material-icons" v-if="playing" @click="pausePlayback">pause_circle_filled</span>
                 <span class="buttonControl material-icons" v-if="!playing" @click="startPlayback">play_arrow</span>
                 <span class="buttonControl material-icons" @click="skipTrack">skip_next</span>
+            </div>
+
+            <div class="trackMeta">
+                <div class="nameArtist">
+                    <div class="nameExplicit">
+                        <p class="trackName">{{ currentSongName }}</p>
+                        <span class="material-icons explicit" v-if="explicit">explicit</span>
+                    </div>
+                    <p>by {{ currentSongArtist }}</p>
+                </div>
+                
+                <div class="trackName">
+                    <p>{{ currentAlbumName }}</p>
+                </div>
+
+                <!-- <img src="./images/Spotify_Icon_RGB_White.png" style="height:30px; width:30px" alt=""> -->
             </div>
 
         </div>
